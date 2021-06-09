@@ -8,8 +8,8 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="../img/favicon.png" rel="icon">
-  <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="" rel="icon">
+  <link href="" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
@@ -62,7 +62,7 @@
                 
                 
                 
-                <li class="active"><a href="../AR/contact.html" class="nav-link">اتصل بنا </a></li>
+                <li class="active"><a href="../AR/contact.php" class="nav-link">اتصل بنا </a></li>
               </ul>
             </nav>
           </div>
@@ -137,13 +137,13 @@
                   </li>
                   <li class="mb-3">
                     <strong class="d-block mb-1">ايميل </strong>
-                    <span>youremail@domain.com</span>
+                    <span>info@elsolimania.com</span>
                   </li>
                 </ul>
               </div>
 
               <div class="col-md-6 mb-5 mb-md-0"  data-aos="fade-up">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <form action="contact.php" method="post" role="form" class="php-email-form">
               
                   <div class="row">
                     <div class="col-md-6 form-group">
@@ -180,6 +180,28 @@
                   </div>
     
                 </form>
+
+
+                <?php
+                if (isset($_REQUEST['message'])) {
+                    $to = "info@elsolimania.com";
+                    $from = $_REQUEST['email'];
+                    $subject = $_REQUEST['subject'].$_REQUEST['name'];
+                    $txt = $_REQUEST['message'];
+                    $headers = "From: " . $from;
+                
+                    mail($to, $subject, $txt, $headers);
+                    echo "<h3>Send Success</h3>";
+                }
+                ?>
+
+
+
+
+
+
+
+
               </div>
           
             </div>
@@ -226,7 +248,7 @@
                 <h3>خدماتنا </h3>
                 <ul class="list-unstyled">
                   <li><a href="../elsolimania/AR/features.html">من نحن </a></li>
-                  <li><a href="../elsolimania/AR/contact.html">اتصل بنا</a></li>
+                  <li><a href="../elsolimania/AR/contact.php">اتصل بنا</a></li>
                 </ul>
               </div>
               <div class="col-md-4 mb-4 mb-md-0">

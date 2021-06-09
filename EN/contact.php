@@ -8,8 +8,8 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="../img/favicon.png" rel="icon">
-  <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="" rel="icon">
+  <link href="" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
@@ -60,9 +60,7 @@
                 <li><a href="../index.html" class="nav-link">Home</a></li>
                 <li><a href="../EN/features.html" class="nav-link">About Us</a></li>
                 
-                
-                
-                <li class="active"><a href="../EN/contact.html" class="nav-link">Contact</a></li>
+                <li class="active"><a href="../EN/contact.php" class="nav-link">Contact</a></li>
               </ul>
             </nav>
           </div>
@@ -100,8 +98,8 @@
             <div class="col-12">
               <div class="row justify-content-center">
                 <div class="col-md-7 text-center hero-text">
-                  <h1 data-aos="fade-up" data-aos-delay="">Get in touch</h1>
-                  <p class="mb-5" data-aos="fade-up"  data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>  
+                  <h1 data-aos="fade-up" data-aos-delay="">Welcome to our contact Us page</h1>
+                  <p class="mb-5" data-aos="fade-up"  data-aos-delay="100">We are at your service throughout the week.</p>  
                 </div>
               </div>
             </div>
@@ -116,7 +114,7 @@
           <div class="col-md-6" data-aos="fade-up">
           
             <h2>Contact Form</h2>
-            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.</p>
+            <p class="mb-0">We are pleased to receive your inquiries.</p>
           </div>
           
         </div>
@@ -126,21 +124,21 @@
                 <ul class="list-unstyled">
                   <li class="mb-3">
                     <strong class="d-block mb-1">Address</strong>
-                    <span>203 Fake St. Mountain View, San Francisco, California, USA</span>
+                    <span>The company's headquarters is the central axis, Al-Khazan St., Fifth District, 878, first floor</span>
                   </li>
                   <li class="mb-3">
                     <strong class="d-block mb-1">Phone</strong>
-                    <span>+1 232 3235 324</span>
+                    <span>01022062385</span>
                   </li>
                   <li class="mb-3">
                     <strong class="d-block mb-1">Email</strong>
-                    <span>youremail@domain.com</span>
+                    <span>info@elsolimania.com</span>
                   </li>
                 </ul>
               </div>
 
               <div class="col-md-6 mb-5 mb-md-0"  data-aos="fade-up">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <form action="contact.php" method="post" role="form" class="php-email-form">
               
                   <div class="row">
                     <div class="col-md-6 form-group">
@@ -177,6 +175,24 @@
                   </div>
     
                 </form>
+
+
+                <?php
+                if (isset($_REQUEST['message'])) {
+                    $to = "info@elsolimania.com";
+                    $from = $_REQUEST['email'];
+                    $subject = $_REQUEST['subject'].$_REQUEST['name'];
+                    $txt = $_REQUEST['message'];
+                    $headers = "From: " . $from;
+                
+                    mail($to, $subject, $txt, $headers);
+                    echo "<h3>Send Success</h3>";
+                }
+                ?>
+
+
+
+
               </div>
           
             </div>
@@ -223,7 +239,7 @@
                 <h3>Services</h3>
                 <ul class="list-unstyled">
                   <li><a href="./features.html">About us</a></li>
-                  <li><a href="./contact.html">contact us</a></li>
+                  <li><a href="./contact.php">contact us</a></li>
                 </ul>
               </div>
               <div class="col-md-4 mb-4 mb-md-0">
