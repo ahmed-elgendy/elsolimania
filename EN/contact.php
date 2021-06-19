@@ -138,28 +138,24 @@
               </div>
 
               <div class="col-md-6 mb-5 mb-md-0"  data-aos="fade-up">
-                <form action="contact.php" method="post" role="form" class="php-email-form">
+                <form action="" method="post" role="form" class="">
               
                   <div class="row">
                     <div class="col-md-6 form-group">
                       <label for="name">Name</label>
                       <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                      <div class="validate"></div>
                     </div>
                     <div class="col-md-6 form-group">
                       <label for="name">Email</label>
                       <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-                      <div class="validate"></div>
                     </div>
                     <div class="col-md-12 form-group">
                       <label for="name">Subject</label>
                       <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                      <div class="validate"></div>
                     </div>
                     <div class="col-md-12 form-group">
                       <label for="name">Message</label>
                       <textarea class="form-control" name="message" cols="30" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
-                      <div class="validate"></div>
                     </div>
     
     
@@ -176,7 +172,7 @@
     
                 </form>
 
-
+                
                 <?php
                 if (isset($_REQUEST['message'])) {
                     $to = "info@elsolimania.com";
@@ -189,9 +185,6 @@
                     echo "<h3>Send Success</h3>";
                 }
                 ?>
-
-
-
 
               </div>
           
@@ -271,9 +264,10 @@
 
       </div>
     </footer>
-  </div> <!-- .site-wrap -->
+  </div> 
+  <!-- .site-wrap -->
   
-  <!-- Vendor JS Files -->
+  <!-- Vendor JS Files-->
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/jquery/jquery-migrate.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -283,8 +277,8 @@
   <script src="../vendor/aos/aos.js"></script>
   <script src="../vendor/owlcarousel/owl.carousel.min.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="../js/main.js"></script>
+   Template Main JS File -->
+  <script src="../js/main.js"></script> 
 
   </body>
 </html>
